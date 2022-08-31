@@ -16,6 +16,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying'
+                bat "mvn clean"
             }
         }
         stage('Test') {

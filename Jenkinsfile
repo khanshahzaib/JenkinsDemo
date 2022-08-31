@@ -1,30 +1,32 @@
-pipeline { agent any
+pipeline { 
+        agent any
 
-stages {
-    stage('Hello') {
-        steps {
-            echo 'Hello World'
+    stages {
+        stage('Clone/ Fetch from Git') {
+            steps {
+                git branch: 'main', url: 'https://github.com/khanshahzaib/JenkinsDemo'
+                echo 'succesfully git connection made'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing'
+            }
+        }
+        stage('Release') {
+            steps {
+                echo 'Releasing'
+            }
         }
     }
-    stage('Build') {
-        steps {
-            echo 'Building'
-        }
-    }
-    stage('Deploy') {
-        steps {
-            echo 'Deploying'
-        }
-    }
-    stage('Test') {
-        steps {
-            echo 'Testing'
-        }
-    }
-    stage('Release') {
-        steps {
-            echo 'Releasing'
-        }
-    }
-}
 }

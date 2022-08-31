@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Clone/ Fetch from Git') {
             steps {
-                echo 'Hello World'
+                echo 'succesfully git connection made'
             }
         }
         stage('Build') {
